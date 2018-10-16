@@ -1,0 +1,36 @@
+<html>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+	<script>
+
+		$(document).ready(function(){
+		    $("#btn").click(function(){
+		        //$("p").slideToggle();
+		        //alert();
+
+		        $.ajax({
+				  method: "POST",
+				  url: "/api",
+				  contentType: "application/json",
+				  data: JSON.stringify({ username: "John", password: "Boston" })
+				})
+				  .done(function( msg ) {
+				    alert( "Data Saved: " + JSON.stringify(msg) );
+				});
+		    });
+		});
+
+	</script>
+
+	<body>
+		email<input id="email"/>
+		<br/>
+		password<input id="password"/>
+		<br/>
+		<button id="btn">hello</button>
+	</body>
+	<br/>
+	<br/>
+	
+</html>
